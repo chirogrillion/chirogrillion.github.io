@@ -1,0 +1,36 @@
+html {
+  overflow-y: hidden;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: sans-serif;
+  color: white;
+  background-color: rgb(50, 50, 50);
+}
+div.projects {
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 30rem;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 20px;
+}
+div.projects a,
+div.projects a:visited {
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: background-color 100ms;
+}
+div.projects a:hover {
+  background-color:rgba(255, 255, 255, 0.4);
+}
+div.projects a:active {
+  background-color:rgba(255, 255, 255, 0.1);
+}
