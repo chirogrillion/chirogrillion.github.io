@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!-- Текущая страница: 1) замена в head > title; 2) скрытие в #burger-menu, 3) замена в #n_title, 4) переключение класса и ссылки в nav ul -->
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, target-densitydpi=device-dpi, initial-scale=1">
+    <title>&laquo;Васильки&raquo; &mdash; рестораны народной кухни</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/desktop.css" type="text/css">
+    <link rel="stylesheet" href="styles/mobile.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body id="main-page">
+    <header>
+      <div> <!-- header container -->
+        <div id="h_links">
+          <div class="filler_between">
+            <a class="link link_lang" href="coming-soon.html" title="Па-беларуску">бел</a>
+            <a class="link link_lang" href="coming-soon.html" title="In English">eng</a>
+          </div>
+          <a class="link link_tel" href="tel:7773" title="Закажите доставку по телефону!">7773</a>
+        </div> <!-- #h_links -->
+        <a id="h_logo" href="main-page.html" title="На главную"></a>
+        <div id="h_buttons" class="inline">
+          <a class="link link_button" href="cart.html">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14,18a1,1,0,0,0,1-1V15a1,1,0,0,0-2,0v2A1,1,0,0,0,14,18Zm-4,0a1,1,0,0,0,1-1V15a1,1,0,0,0-2,0v2A1,1,0,0,0,10,18ZM19,6H17.62L15.89,2.55a1,1,0,1,0-1.78.9L15.38,6H8.62L9.89,3.45a1,1,0,0,0-1.78-.9L6.38,6H5a3,3,0,0,0-.92,5.84l.74,7.46a3,3,0,0,0,3,2.7h8.38a3,3,0,0,0,3-2.7l.74-7.46A3,3,0,0,0,19,6ZM17.19,19.1a1,1,0,0,1-1,.9H7.81a1,1,0,0,1-1-.9L6.1,12H17.9ZM19,10H5A1,1,0,0,1,5,8H19a1,1,0,0,1,0,2Z"/>
+            </svg>
+            Корзина
+          </a>
+          <a class="link link_button" href="account.html">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1,1,0,0,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1A10,10,0,0,0,15.71,12.71ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z"/>
+            </svg>
+            Аккаунт
+          </a>
+        </div> <!-- #h_buttons -->
+      </div> <!-- header container -->
+    </header>
+    <div id="burger-menu">
+      <ul>
+        <li><a href="menu.html">Меню</a></li>
+        <li><a href="promotions.html">Акции</a></li>
+        <li><a href="delivery.html">Доставка</a></li>
+        <li><a href="restaurants.html">Рестораны</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="cart.html">Корзина</a></li>
+        <li><a href="account.html">Аккаунт</a></li>
+      </ul>
+      <a href="javascript:burgerMenu()"></a>
+    </div>
+    <nav id="nav">
+      <div> <!-- nav bar container -->
+        <div id="n_title" class="inline">
+          <a id="n_logo" href="javascript:scrollToTop()" title="Нажмите, чтобы переместиться вверх"></a>
+        </div>
+        <ul class="inline">
+          <li><a href="menu.html">Меню</a></li>
+          <li><a href="promotions.html">Акции</a></li>
+          <li><a href="delivery.html">Доставка</a></li>
+          <li><a href="restaurants.html">Рестораны</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div id="n_buttons" class="inline">
+          <a href="cart.html" title="Корзина">
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#cart"/>
+            </svg>
+          </a>
+          <a href="account.html" title="Аккаунт">
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#account"/>
+            </svg>
+          </a>
+          <a id="burger-button" class="default" href="javascript:burgerMenu()"></a>
+        </div> <!-- #n_buttons -->
+      </div> <!-- nav bar container -->
+    </nav>
+    <main>
+
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slide">
+              <img class="desktop" src="graphics/banners/banner_delivery.png">
+              <img class="mobile" src="graphics/banners/banner_delivery_mobile.png">
+              <div class="slide_note">
+                <h2>Заказывайте доставку!</h2>
+                <p>Любимые блюда из ресторанов народной кухни &laquo;Васильки&raquo; теперь можно заказать с доставкой на дом или в офис! Дополнительная услуга &mdash; бесконтактная доставка: курьер оставит заказ в любом указанном Вами месте.</p>
+                <p class="note">Заказ можно оформить на этом сайте или по телефону 7773.</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide">
+              <img class="desktop" src="graphics/banners/banner_minsk-card.png">
+              <img class="mobile" src="graphics/banners/banner_minsk-card_mobile.png">
+              <div class="slide_note">
+                <h2>Выгодное предложение для владельцев карт &laquo;MinskCard&raquo;</h2>
+                <p>Предъявите карту &laquo;MinskCard&raquo; в ресторанах народной кухни &laquo;Васильки&raquo; и получите скидку 5% на основное меню.</p>
+                <p class="note">Акция не действует в ресторане по адресу просп. Независимости, 16 и не суммируется с другими акциями и предложениями.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <script>
+        const swiper = new Swiper('.swiper', {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          navigation: {
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+          },
+        });
+      </script>
+
+
+      <section>
+        <div class="section_heading-with-button">
+          <h1>Новинки <span>в нашем</span> меню</h1>
+          <button type="button" class="button-with-icon" onclick="location.href='menu.html';">Смотреть все</button>
+        </div>
+
+        <form class="dish" action="https://fe.it-academy.by/TestForm.php" target="_blank" method="post">
+          <img src="graphics/dishes/Kotlety-iz-lososja-s-ovoschnym-garnirom.jpg" alt="Котлеты из лосося с овощным гарниром">
+          <div class="dish_labels">
+          </div>
+          <h2>Котлеты <span>из лосося</span> <span>с овощным</span> гарниром</h2> <!-- СМЕНИТЬ IMG[ALT] И INPUT[VALUE] -->
+          <input type="hidden" name="dishName" value="Котлеты из лосося с овощным гарниром">
+          <p class="note">обжаренные в хрустящей панировке котлеты из лосося, картофельное пюре, шампиньоны, цукини, томаты черри, карамелизированный лук, сливочно-горчичный соус, ростки гороха</p>
+          <div class="filler_between filler_before">
+            <p>420 г</p>
+            <p>19 руб. 30 коп.</p>
+          </div>
+          <div class="filler_between">
+            <div class="counter">
+              <button class="counter_minus" type="button">&minus;</button>
+              <input type="number" name="dishNumber" required value="1" min="1" max="20">
+              <button class="counter_plus" type="button">+</button>
+            </div>
+            <button class="button_primary" type="submit"><span>В корзину</span></button>
+          </div>
+        </form>
+
+        <form class="dish" action="https://fe.it-academy.by/TestForm.php" target="_blank" method="post">
+          <img src="graphics/dishes/Skovorodka-s-ohotnichjimi-kolbaskami.jpg" alt="Сковородка с охотничьими колбасками и шкварками">
+          <div class="dish_labels">
+          </div>
+          <h2>Сковородка <span>с охотничьими</span> колбасками <span>и шкварками</span></h2> <!-- СМЕНИТЬ IMG[ALT] И INPUT[VALUE] -->
+          <input type="hidden" name="dishName" value="Сковородка с охотничьими колбасками и шкварками">
+          <p class="note">колбаски со свининой и говядиной, яичница, жареный картофель, шкварки, лук, маринованный помидор, чеснок</p>
+          <div class="filler_between filler_before">
+            <p>405 г</p>
+            <p>16 руб. 70 коп.</p>
+          </div>
+          <div class="filler_between">
+            <div class="counter">
+              <button class="counter_minus" type="button">&minus;</button>
+              <input type="number" name="dishNumber" required value="1" min="1" max="20">
+              <button class="counter_plus" type="button">+</button>
+            </div>
+            <button class="button_primary" type="submit"><span>В корзину</span></button>
+          </div>
+        </form>
+
+        <form class="dish" action="https://fe.it-academy.by/TestForm.php" target="_blank" method="post">
+          <img src="graphics/dishes/Draniki-s-gribami.jpg" alt="Драники с грибами">
+          <div class="dish_labels">
+          </div>
+          <h2>Драники <span>с грибами</span></h2> <!-- СМЕНИТЬ IMG[ALT] И INPUT[VALUE] -->
+          <input type="hidden" name="dishName" value="Драники с грибами">
+          <p class="note">драники, шампиньоны, вешенки, боровики, тимьян, лук, чеснок, сливочный соус <span>на говяжьем</span> бульоне, сметана</p>
+          <div class="filler_between filler_before">
+            <p>370 г</p>
+            <p>13 руб. 10 коп.</p>
+          </div>
+          <div class="filler_between">
+            <div class="counter">
+              <button class="counter_minus" type="button">&minus;</button>
+              <input type="number" name="dishNumber" required value="1" min="1" max="20">
+              <button class="counter_plus" type="button">+</button>
+            </div>
+            <button class="button_primary" type="submit"><span>В корзину</span></button>
+          </div>
+        </form>
+
+        <form class="dish" action="https://fe.it-academy.by/TestForm.php" target="_blank" method="post">
+          <img src="graphics/dishes/Burger-s-kurinoj-kotletoj-i-kartofelem-fri.jpg" alt="Бургер с куриной котлетой и картофелем фри">
+          <div class="dish_labels">
+          </div>
+          <h2>Бургер <span>с куриной</span> котлетой <span>и картофелем</span> фри</h2> <!-- СМЕНИТЬ IMG[ALT] И INPUT[VALUE] -->
+          <input type="hidden" name="dishName" value="Бургер с куриной котлетой и картофелем фри">
+          <p class="note">булочка бриошь, котлета из курицы, сыр чеддер, пикантный соус, маринованные огурцы, листья салата, картофель фри</p>
+          <div class="filler_between filler_before">
+            <p>250 г</p>
+            <p>9 руб. 90 коп.</p>
+          </div>
+          <div class="filler_between">
+            <div class="counter">
+              <button class="counter_minus" type="button">&minus;</button>
+              <input type="number" name="dishNumber" required value="1" min="1" max="20">
+              <button class="counter_plus" type="button">+</button>
+            </div>
+            <button class="button_primary" type="submit"><span>В корзину</span></button>
+          </div>
+        </form>
+
+        <button type="button" class="button-with-icon hidden" onclick="location.href='menu.html';">Смотреть все</button>
+
+      </section>
+      <div class="content_divider"><div class="content_divider_line"></div><div class="content_divider_dot"></div><div class="content_divider_line"></div></div>
+
+
+      <section>
+        <div class="section_heading-with-button">
+          <h1>Популярные блюда</h1>
+          <button type="button" class="button-with-icon" onclick="location.href='menu.html';">Смотреть все</button>
+        </div>
+
+        <form class="dish" action="https://fe.it-academy.by/TestForm.php" target="_blank" method="post">
+          <img src="graphics/dishes/Draniki-s-mjasom.jpg" alt="Драники с мясом">
+          <div class="dish_labels">
+          </div>
+          <h2>Драники <span>с мясом</span></h2> <!-- СМЕНИТЬ IMG[ALT] И INPUT[VALUE] -->
+          <input type="hidden" name="dishName" value="Драники с мясом">
+          <p class="note">картофельные драники, фарш из свинины и курицы, укроп</p>
+          <div class="filler_between filler_before">
+            <p>300 г</p>
+            <p>11 руб. 20 коп.</p>
+          </div>
+          <div class="filler_between">
+            <div class="counter">
+              <button class="counter_minus" type="button">&minus;</button>
+              <input type="number" name="dishNumber" required value="1" min="1" max="20">
+              <button class="counter_plus" type="button">+</button>
+            </div>
+            <button class="button_primary" type="submit"><span>В корзину</span></button>
+          </div>
+        </form>
+
+        <form class="dish" action="https://fe.it-academy.by/TestForm.php" target="_blank" method="post">
+          <img src="graphics/dishes/Zharenyj-kartofel-s-gribami.jpg" alt="Жареный картофель с грибами в сметанном соусе">
+          <div class="dish_labels">
+            <div class="dish_label" title="Новинка!" style="background-color: var(--red-o100)">
+              new
+            </div>
+            <div class="dish_label" title="Вегетарианское" style="background-color: var(--green)">
+              <svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="graphics/icons/sprite.svg#vegan"/>
+              </svg>
+            </div>
+          </div>
+          <h2>Жареный картофель <span>с грибами</span> <span>в сметанном</span> соусе</h2> <!-- СМЕНИТЬ IMG[ALT] И INPUT[VALUE] -->
+          <input type="hidden" name="dishName" value="Жареный картофель с грибами в сметанном соусе">
+          <p class="note">жареный картофель, шампиньоны, вешенки, боровики, тимьян, сметанный соус со сливками, шпинатом и чесноком, обжаренный лук, томаты черри</p>
+          <div class="filler_between filler_before">
+            <p>405 г</p>
+            <p>14 руб.</p>
+          </div>
+          <div class="filler_between">
+            <div class="counter">
+              <button class="counter_minus" type="button">&minus;</button>
+              <input type="number" name="dishNumber" required value="1" min="1" max="20">
+              <button class="counter_plus" type="button">+</button>
+            </div>
+            <button class="button_primary" type="submit"><span>В корзину</span></button>
+          </div>
+        </form>
+
+        <form class="dish" action="https://fe.it-academy.by/TestForm.php" target="_blank" method="post">
+          <img src="graphics/dishes/Karp-Braslavskij.jpg" alt="Карп &laquo;Браславский&raquo;">
+          <div class="dish_labels">
+          </div>
+          <h2>Карп &laquo;Браславский&raquo;</h2> <!-- СМЕНИТЬ IMG[ALT] И INPUT[VALUE] -->
+          <input type="hidden" name="dishName" value="Карп &laquo;Браславский&raquo;">
+          <select name="dishKind">
+            <option value="с обжаренным отварным картофелем" selected>с обжаренным отварным картофелем (100 г)</option>
+            <option value="с картофельным пюре">с картофельным пюре (150 г)</option>
+            <option value="с золотистым и диким рисом">с золотистым и диким рисом (120 г)</option>
+          </select>
+          <p class="note">жареное филе карпа, обжаренная стручковая фасоль, соус тартар, хрустящий лук, долька лимона</p>
+          <div class="filler_between filler_before">
+            <p>260 г</p>
+            <p>16 руб. 40 коп.</p>
+          </div>
+          <div class="filler_between">
+            <div class="counter">
+              <button class="counter_minus" type="button">&minus;</button>
+              <input type="number" name="dishNumber" required value="1" min="1" max="20">
+              <button class="counter_plus" type="button">+</button>
+            </div>
+            <button class="button_primary" type="submit"><span>В корзину</span></button>
+          </div>
+        </form>
+
+        <form class="dish" action="https://fe.it-academy.by/TestForm.php" target="_blank" method="post">
+          <img src="graphics/dishes/Jablochnyj-pirog.jpg" alt="Яблочный пирог">
+          <div class="dish_labels">
+          </div>
+          <h2>Яблочный пирог</h2> <!-- СМЕНИТЬ IMG[ALT] И INPUT[VALUE] -->
+          <input type="hidden" name="dishName" value="Яблочный пирог">
+          <p class="note">яблочный пирог, взбитые сливки, карамельный соус, ванильное мороженое</p>
+          <div class="filler_between filler_before">
+            <p>200 г</p>
+            <p>8 руб. 50 коп.</p>
+          </div>
+          <div class="filler_between">
+            <div class="counter">
+              <button class="counter_minus" type="button">&minus;</button>
+              <input type="number" name="dishNumber" required value="1" min="1" max="20">
+              <button class="counter_plus" type="button">+</button>
+            </div>
+            <button class="button_primary" type="submit"><span>В корзину</span></button>
+          </div>
+        </form>
+
+        <button type="button" class="button-with-icon hidden" onclick="location.href='menu.html';">Смотреть все</button>
+
+      </section>
+
+
+      <section id="about-us">
+        <h1>О нас</h1>
+        <article class="static">
+          <section class="article_text-and-photo">
+            <p>Сеть ресторанов народной кухни &laquo;Васильки&raquo; так называется неспроста. Во-первых, этот красивый полевой цветок всем известен как символ Беларуси. Во-вторых, васильки &mdash; цветы дружелюбные, а само слово с детства вызывает приятные воспоминания. Рестораны &laquo;Васильки&raquo; приглашают насладиться традиционной белорусской кухней и ощутить настоящее белорусское гостеприимство.</p>
+            <div class="path"><div class="path_line"></div><div class="path_dot"></div><div class="path_line"></div></div>
+            <img src="graphics/photos/vasilki.jpg" title="Васильки" alt="Васильки">
+          </section>
+          <section class="article_text-and-photo">
+            <p>В &laquo;Васильках&raquo; всё по-домашнему просто: стилизация под белорусскую хату, удобные лавочки, родные берёзки вместо скучных стен &mdash; всё это способствует настоящему душевному общению.</p>
+            <div class="path"><div class="path_line"></div><div class="path_dot"></div><div class="path_line"></div></div>
+            <img src="graphics/photos/interior.jpg" title="Интерьер" alt="Интерьер">
+          </section>
+          <section class="article_text-and-photo">
+          <p>Кухня в ресторанах &laquo;Васильки&raquo; преимущественно белорусская. От одного описания блюд разгорается аппетит, а порции здесь по-белорусски большие. Несомненно, правят балом и задают настроение всему столу в &laquo;Васильках&raquo; блюда из картошки. Здесь можно попробовать драники с мясом, лососем или беконом, цеппелины, картофельные пирожки и многое другое.</p>
+            <div class="path"><div class="path_line"></div><div class="path_dot"></div><div class="path_line"></div></div>
+            <img src="graphics/photos/kartoshka.jpg" title="Блюда из картошки" alt="Блюда из картошки">
+          </section>
+          <section class="article_text-and-photo">
+            <p>От деревенских щей или холодного щавеля со сметаной просто невозможно отказаться! Слюнки текут, когда представляешь себе свиную рульку, котлетки или домашние колбаски. Горяченькие пирожки сами просятся в рот. А на десерт &mdash; ароматные пироги от шеф-повара, приготовленные по народным рецептам. И это лишь малая часть того, что можно найти в нашем меню.</p>
+            <div class="path"><div class="path_line"></div><div class="path_dot"></div><div class="path_line"></div></div>
+            <img src="graphics/photos/mjaso.jpg" title="Мясные блюда" alt="Мясные блюда">
+          </section>
+          <section class="article_text-and-photo">
+          <p>А как приятно в летнюю жару сделать глоток холодного клюквенного морса! Этот белорусский напиток пользуется в &laquo;Васильках&raquo; особой популярностью. Также меню предлагает ягодный кисель, васильковую воду и напиток &laquo;На здоровье!&raquo; собственного производства.</p>
+            <div class="path"><div class="path_line"></div><div class="path_dot"></div><div class="path_line"></div></div>
+            <img src="graphics/photos/napitki.jpg" title="Напитки" alt="Напитки">
+          </section>
+          <section class="article_text-and-photo">
+          <p>Рестораны &laquoВасильки&raquo; подходят для семейного отдыха; сюда не стыдно пригласить зарубежных гостей или коллег для делового обеда. Найдётся место и для веселого банкета. В &laquo;Васильках&raquo; каждый откроет для себя что-то новое в белорусской культуре. Здесь кормят сытно, гуляют от души, а прощаясь, хотят вернуться снова.</p>
+            <div class="path"><div class="path_line"></div><div class="path_dot"></div><div class="path_line"></div></div>
+            <img src="graphics/photos/guests.jpg" title="Наши гости" alt="Наши гости">
+          </section>
+        </article>
+      </section>
+
+
+      <section>
+        <div class="section_heading-with-button">
+          <h1>Приходите <span>к нам</span> <span>в гости!</span></h1>
+          <button type="button" class="button-with-icon" onclick="location.href='restaurants.html';" title="Адреса ресторанов сети, время работы и телефоны">Узнать больше</button>
+        </div>
+        <article class="map-container">
+          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad5b49a836370bfbd9e8b498276fc9926bdb96d1a7b4da3b67c09fb4449e0c29a&amp;width=100%25&amp;height=550&amp;lang=ru_RU&amp;scroll=true"></script>
+        </article>
+        <button type="button" class="button-with-icon hidden" onclick="location.href='restaurants.html';" title="Адреса всех ресторанов сети, время работы и телефоны">Узнать больше</button>
+      </section>
+      <div class="content_divider"><div class="content_divider_line"></div><div class="content_divider_dot"></div><div class="content_divider_line"></div></div>
+
+
+      <section>
+        <h1>Или закажите доставку</h1>
+
+        <form id="check-zone" action="https://fe.it-academy.by/TestForm.php" target="_blank" method="post">
+          <h2>Проверьте, <span>входит ли</span> <span>Ваш адрес</span> <span>в зону</span> доставки</h2>
+          <label>Город:
+            <select name="city" required>
+              <option selected disabled hidden></option>
+              <option value="minsk">Минск</option>
+              <option value="gomel">Гомель</option>
+              <option value="mozyr">Мозырь</option>
+            </select>
+          </label>
+          <label>Улица:
+            <input name="street" type="text" required>
+          </label>
+          <label class="filler_after">Дом:
+            <input name="building" type="number" required>
+          </label>
+          <button type="submit" class="button_primary">Проверить</button>
+        </form>
+
+        <article>
+          <h2>Обратите внимание</h2>
+          <ul class="filler_after">
+            <li>Служба доставки работает в Минске, Гомеле и Мозыре.</li>
+            <li>Заказы принимаются ежденевно с 10:00 до 22:00. В Минске в пятницу и субботу заказы принимаются до 23:00.</li>
+            <li>Обеденное меню доступно для заказа в будние дни с 12:00 до 16:00.</li>
+            <li>Стоимость доставки в Минске — 3 рубля. В Гомеле и Мозыре доставка бесплатная.</li>
+          </ul>
+          <button type="button" class="button-with-icon" onclick="location.href='delivery.html';">Узнать больше</button>
+        </article>
+
+      </section>
+
+
+    </main>
+    <script>
+      window.onscroll = function() {stickToTop()};
+      var nav = document.getElementById('nav');
+      var sticky = nav.offsetTop;
+      function stickToTop() {
+        if (window.pageYOffset > sticky) {
+          nav.classList.add('sticky');
+        }
+        else {
+          nav.classList.remove('sticky');
+        }
+      }
+    </script>
+    <footer>
+      <div> <!-- footer container -->
+
+
+        <div> <!-- about us -->
+          <div id="f_logo"></div>
+
+          <div>
+            <a href="main-page.html#about-us">О нас</a>
+            <a href="coming-soon.html">Помощь</a>
+            <a href="contacts.html#feedback">Обратная связь</a>
+          </div>
+
+        </div> <!-- about us -->
+
+
+        <div id="f_co-op">
+          <h3>Сотрудничество</h3>
+
+          <div>
+            <a href="contacts.html#for-partners">Партнёрам</a>
+            <a href="contacts.html#for-suppliers">Поставщикам</a>
+            <a href="contacts.html#employment">Трудоустройство</a>
+          </div>
+
+        </div> <!-- #f_co-op -->
+
+
+        <div id="f_docs">
+          <h3>Документация</h3>
+
+          <div>
+            <a href="coming-soon.html">Аллергены и информация о питании</a>
+            <a href="coming-soon.html">Пользовательское соглашение</a>
+            <a href="privacy-policy.html">Политика конфиденциальности</a>
+            <a href="coming-soon.html">Публичная оферта</a>
+          </div>
+
+        </div> <!-- #f_docs -->
+
+
+        <div id="f_apps">
+          <h3>Наши приложения</h3>
+
+          <div class="inline">
+            <a href="coming-soon.html" title="Скачать приложение для iOS">
+              <img src="graphics/logos/app-store-badge.svg" alt="App Store">
+            </a>
+            <a href="coming-soon.html" title="Скачать приложение для Android">
+              <img src="graphics/logos/google-play-badge.png" alt="Google Play">
+            </a>
+          </div>
+
+        </div> <!-- #f_apps -->
+
+
+        <div id="f_contact">
+          <a class="link link_tel" href="tel:7773" title="Позвоните нам!">7773</a>
+
+          <div class="inline">
+            <a href="https://vk.com/vasilki.restoran" title="ВКонтакте">
+              <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="graphics/icons/sprite.svg#vk"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/vasilki.by" title="Facebook">
+              <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="graphics/icons/sprite.svg#fb"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/restoran.vasilki/" title="Instagram">
+              <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="graphics/icons/sprite.svg#ig"/>
+              </svg>
+            </a>
+          </div>
+
+        </div> <!-- #f_contact -->
+
+
+        <div id="f_friends">
+          <h3>Наши друзья</h3>
+
+          <div class="inline">
+            <a href="https://www.pizzatempo.by/" title="Пицца Темпо">
+              <img src="graphics/logos/pizza-tempo-logo.png" alt="Пицца Темпо">
+            </a>
+          </div>
+
+        </div> <!-- #f_friends -->
+
+
+        <div id="f_payment">
+          <h3>Принимаем к оплате</h3>
+
+          <div class="inline">
+            <svg viewbox="0 0 4745 2000.17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#visa"/>
+            </svg>
+            <svg viewbox="0 0 3174 1999.94" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#mc"/>
+            </svg>
+            <svg viewbox="0 0 8094 1999.89" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#bk"/>
+            </svg>
+          </div>
+
+        </div> <!-- #f_payment -->
+
+
+        <div id="f_copy">
+          Разработка сайта: Стёпин С. О.<br>
+          Интернет-магазин зарегистрирован в Торговом реестре Республики Беларусь 6 февраля 2019 г. Регистрационный номер: 439943<br>
+          &copy; ООО &laquo;НОВИТА&raquo;, 2022
+        </div> <!-- #f_copy -->
+
+
+      </div> <!-- footer container -->
+    </footer>
+  </body>
+</html>

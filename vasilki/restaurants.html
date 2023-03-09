@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!-- Текущая страница: 1) замена в head > title; 2) скрытие в #burger-menu, 3) замена в #n_title, 4) переключение класса и ссылки в nav ul -->
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, target-densitydpi=device-dpi, initial-scale=1">
+    <title>Сеть ресторанов &laquo;Васильки&raquo;</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/desktop.css" type="text/css">
+    <link rel="stylesheet" href="styles/mobile.css" type="text/css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div> <!-- header container -->
+        <div id="h_links">
+          <div class="filler_between">
+            <a class="link link_lang" href="coming-soon.html" title="Па-беларуску">бел</a>
+            <a class="link link_lang" href="coming-soon.html" title="In English">eng</a>
+          </div>
+          <a class="link link_tel" href="tel:7773" title="Закажите доставку по телефону!">7773</a>
+        </div> <!-- #h_links -->
+        <a id="h_logo" href="main-page.html" title="На главную"></a>
+        <div id="h_buttons" class="inline">
+          <a class="link link_button" href="cart.html">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14,18a1,1,0,0,0,1-1V15a1,1,0,0,0-2,0v2A1,1,0,0,0,14,18Zm-4,0a1,1,0,0,0,1-1V15a1,1,0,0,0-2,0v2A1,1,0,0,0,10,18ZM19,6H17.62L15.89,2.55a1,1,0,1,0-1.78.9L15.38,6H8.62L9.89,3.45a1,1,0,0,0-1.78-.9L6.38,6H5a3,3,0,0,0-.92,5.84l.74,7.46a3,3,0,0,0,3,2.7h8.38a3,3,0,0,0,3-2.7l.74-7.46A3,3,0,0,0,19,6ZM17.19,19.1a1,1,0,0,1-1,.9H7.81a1,1,0,0,1-1-.9L6.1,12H17.9ZM19,10H5A1,1,0,0,1,5,8H19a1,1,0,0,1,0,2Z"/>
+            </svg>
+            Корзина
+          </a>
+          <a class="link link_button" href="account.html">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1,1,0,0,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1A10,10,0,0,0,15.71,12.71ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z"/>
+            </svg>
+            Аккаунт
+          </a>
+        </div> <!-- #h_buttons -->
+      </div> <!-- header container -->
+    </header>
+    <div id="burger-menu">
+      <ul>
+        <li><a href="menu.html">Меню</a></li>
+        <li><a href="promotions.html">Акции</a></li>
+        <li><a href="delivery.html">Доставка</a></li>
+        <li style="display: none"><a href="restaurants.html">Рестораны</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="cart.html">Корзина</a></li>
+        <li><a href="account.html">Аккаунт</a></li>
+      </ul>
+      <a href="javascript:burgerMenu()"></a>
+    </div>
+    <nav id="nav">
+      <div> <!-- nav bar container -->
+        <div id="n_title" class="inline">
+          <a id="n_logo" href="main-page.html" title="На главную"></a>
+          <a id="n_current-page" href="javascript:scrollToTop()" title="Текущая страница. Нажмите, чтобы переместиться вверх.">Рестораны</a>
+        </div>
+        <ul class="inline">
+          <li><a href="menu.html">Меню</a></li>
+          <li><a href="promotions.html">Акции</a></li>
+          <li><a href="delivery.html">Доставка</a></li>
+          <li><a class="current" href="javascript:scrollToTop()">Рестораны</a></li> <!-- href="restaurants.html" -->
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div id="n_buttons" class="inline">
+          <a href="cart.html" title="Корзина">
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#cart"/>
+            </svg>
+          </a>
+          <a href="account.html" title="Аккаунт">
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#account"/>
+            </svg>
+          </a>
+          <a id="burger-button" class="default" href="javascript:burgerMenu()"></a>
+        </div> <!-- #n_buttons -->
+      </div> <!-- nav bar container -->
+    </nav>
+    <main>
+      <div id="tabs">
+        <ul>
+          <li><a href="#minsk">Минск</a></li>
+          <li><a href="#vitebsk">Витебск</a></li>
+          <li><a href="#mogilev">Могилёв</a></li>
+          <li><a href="#gomel">Гомель</a></li>
+          <li><a href="#mozyr">Мозырь</a></li>
+        </ul>
+      </div>
+      <script>
+        document.getElementById('tabs')
+          .addEventListener('wheel', function(event) {
+            if (event.deltaMode == event.DOM_DELTA_PIXEL) {
+              var modifier = 1;
+            }
+            else if (event.deltaMode == event.DOM_DELTA_LINE) {
+              var modifier = parseInt(getComputedStyle(this).lineHeight);
+            }
+            else if (event.deltaMode == event.DOM_DELTA_PAGE) {
+              var modifier = this.clientHeight;
+            }
+            if (event.deltaY != 0) {
+              this.scrollLeft += modifier * event.deltaY;
+              event.preventDefault();
+            }
+          });
+      </script>
+      <div id="content">
+
+
+        <section id="minsk">
+          <h1>Минск</h1>
+
+          <article class="contact">
+            <h2>ТЦ &laquo;Караван&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/kafe_vasilki/1281766735/?ll=27.440173%2C53.926499&z=17.09">
+              <span>г. Минск,</span> <span>ул. Налибокская, 1,</span> <span>этаж 2</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>11:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375296541058" title="Номер телефона">8 (029) 654-10-58</a>
+          </article>
+
+          <article class="contact">
+            <h2>ТЦ &laquo;Скала&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/1289877051/?indoorLevel=1&ll=27.470185%2C53.908851&z=17.09">
+              <span>г. Минск,</span> <span>ул. Петра</span> <span>Глебки, 5,</span> <span>этаж 1</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>вс&ndash;чт</p><p>10:00&ndash;22:00</p></div>
+              <div class="filler_between"><p>пт&ndash;сб</p><p>10:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375291886035" title="Номер телефона">8 (029) 188-60-35</a>
+          </article>
+
+          <article class="contact">
+            <h2>ТРЦ &laquo;Galleria Minsk&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/190867084442/?ll=27.548427%2C53.908538&z=14.43">
+              <span>г. Минск,</span> просп. <span>Победителей, 9,</span> <span>этаж 6</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>10:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375297044428" title="Номер телефона">8 (029) 704-44-28</a>
+          </article>
+
+          <article class="contact">
+            <h2>Октябрьская</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/1185298961/?ll=27.555677%2C53.898390&z=17.09">
+              <span>г. Минск,</span> просп. <span>Независимости, 16</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>вс&ndash;чт</p><p>08:00&ndash;23:00</p></div>
+              <div class="filler_between"><p>пт&ndash;сб</p><p>08:00&ndash;00:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375297064452" title="Номер телефона">8 (029) 706-44-52</a>
+          </article>
+
+          <article class="contact">
+            <h2>ТРЦ &laquo;Galileo&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/1265243122/?indoorLevel=4&ll=27.554384%2C53.890245&z=17.09">
+              <span>г. Минск,</span> <span>ул. Бобруйская, 6,</span> <span>этаж 4</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>вс&ndash;чт</p><p>10:00&ndash;22:00</p></div>
+              <div class="filler_between"><p>пт&ndash;сб</p><p>10:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375447488269" title="Номер телефона">8 (044) 748-82-69</a>
+          </article>
+
+          <article class="contact">
+            <h2>МЦ &laquo;Айсберг&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/1099907418/?ll=27.592706%2C53.925900&z=17.09">
+              <span>г. Минск,</span> <span>ул. Якуба</span> <span>Коласа, 37</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>вс&ndash;чт</p><p>11:00&ndash;23:00</p></div>
+              <div class="filler_between"><p>пт&ndash;сб</p><p>11:00&ndash;02:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375297067034" title="Номер телефона">8 (029) 706-70-34</a>
+          </article>
+
+          <article class="contact">
+            <h2>Площадь Якуба Коласа</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/9227643350/?ll=27.589140%2C53.917846&z=17.09">
+              <span>г. Минск,</span> просп. <span>Независимости, 58</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>08:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375291802987" title="Номер телефона">8 (029) 180-29-87</a>
+          </article>
+
+          <article class="contact">
+            <h2>Парк Челюскинцев</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/1190776897/?ll=27.606954%2C53.923397&z=17.09">
+              <span>г. Минск,</span> просп. <span>Независимости, 89</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>08:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375297644659" title="Номер телефона">8 (029) 764-46-59</a>
+          </article>
+
+          <article class="contact">
+            <h2>ТЦ &laquo;Гиппо&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/83827061508/?ll=27.594871%2C53.875045&z=17.09">
+              <span>г. Минск,</span> просп. <span>Рокоссовского, 2,</span> <span>этаж 2</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>10:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375291025608" title="Номер телефона">8 (029) 102-56-08</a>
+          </article>
+
+          <article class="contact">
+            <h2>ТРЦ &laquo;Expobel&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/216558020720/?indoorLevel=1&ll=27.624022%2C53.964443&z=17.09">
+              <span>д. Боровая, 5,</span> <span>этаж 1</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>10:00&ndash;22:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375291803104" title="Номер телефона">8 (029) 180-31-04</a>
+          </article>
+
+          <article class="contact">
+            <h2>ТРЦ &laquo;Dana Mall&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/43944108257/?indoorLevel=3&ll=27.652534%2C53.933699&z=17.09">
+              <span>г. Минск,</span> <span>ул. Петра</span> <span>Мстиславца, 11,</span> <span>этаж 3</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>10:00&ndash;22:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375293993866" title="Номер телефона">8 (029) 399-38-66</a>
+          </article>
+
+          <article class="contact">
+            <h2>ТЦ &laquo;МОМО&raquo;</h2>
+            <a class="link link_address" title="Посмотреть на карте" target="ymaps"
+              href="https://yandex.by/maps/157/minsk/house/Zk4YcABkSUYGQFtpfXR0eHphYg==/?indoorLevel=1&ll=27.674031%2C53.859626&z=17.15">
+              <span>г. Минск,</span> просп. <span>Партизанский, 150А,</span> <span>этаж 1</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>09:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375296669248" title="Номер телефона">8 (029) 666-92-48</a>
+          </article>
+
+        </section> <!-- #minsk -->
+        <div class="content_divider"><div class="content_divider_line"></div><div class="content_divider_dot"></div><div class="content_divider_line"></div></div>
+
+
+        <section id="vitebsk">
+          <h1>Витебск</h1>
+
+          <article class="contact">
+            <h2>Первомайский</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/1241723179/?ll=30.206265%2C55.181745&z=17.09">
+              <span>г. Витебск,</span> просп. <span>Московский, 9,</span> <span>корп. 1</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>10:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375447488267" title="Номер телефона">8 (044) 748-82-67</a>
+          </article>
+
+        </section> <!-- #vitebsk -->
+        <div class="content_divider"><div class="content_divider_line"></div><div class="content_divider_dot"></div><div class="content_divider_line"></div></div>
+
+
+        <section id="mogilev">
+          <h1>Могилёв</h1>
+
+          <article class="contact">
+            <h2>АДЦ &laquo;Атриум&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/90769651075/?l=stv%2Csta&ll=30.339458%2C53.904125&z=17.09">
+              <span>г. Могилёв,</span> <span>ул. Первомайская, 57,</span> <span>этаж 3</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>11:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375291083924" title="Номер телефона">8 (029) 108-39-24</a>
+          </article>
+
+        </section> <!-- #mogilev -->
+        <div class="content_divider"><div class="content_divider_line"></div><div class="content_divider_dot"></div><div class="content_divider_line"></div></div>
+
+
+        <section id="gomel">
+          <h1>Гомель</h1>
+
+          <article class="contact">
+            <h2>ТЦ &laquo;Бульвар&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/151056163559/?l=stv%2Csta&ll=30.994027%2C52.431936&z=18.48">
+              <span>г. Гомель,</span> просп. <span>Победы, 29,</span> <span>этаж 2</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>11:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375445570450" title="Номер телефона">8 (044) 557-04-50</a>
+          </article>
+
+        </section> <!-- #gomel -->
+        <div class="content_divider"><div class="content_divider_line"></div><div class="content_divider_dot"></div><div class="content_divider_line"></div></div>
+
+
+        <section id="mozyr">
+          <h1>Мозырь</h1>
+
+          <article class="contact">
+            <h2>ТЦ &laquo;Бобровский&raquo;</h2>
+            <a class="link link_address" title="Посмотреть расположение на карте, фото, оценки и отзывы" target="ymaps"
+              href="https://yandex.by/maps/org/vasilki/235275144262/?l=stv%2Csta&ll=29.221684%2C52.037968&z=17.09">
+              <span>г. Мозырь,</span> <span>ул. Рыжкова, 94,</span> <span>этаж 1</span>
+            </a>
+            <div class="working-hours">
+              <h3>Время работы</h3>
+              <div class="filler_between"><p>каждый день</p><p>10:00&ndash;23:00</p></div>
+            </div>
+            <a class="link link_tel" href="tel:+375291708402" title="Номер телефона">8 (029) 170-84-02</a>
+          </article>
+
+        </section> <!-- #mozyr -->
+
+
+      </div> <!-- #content -->
+      <script>
+        const sectionAll = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+          const scrollY = window.pageYOffset + 140;
+          sectionAll.forEach((current) => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 20;
+            const sectionId = current.getAttribute('id');
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+              document
+                .querySelector('li a[href*="' + sectionId + '"]')
+                .classList.add('active');
+            }
+            else {
+              document
+                .querySelector('li a[href*="' + sectionId + '"]')
+                .classList.remove('active');
+            }
+          });
+        });
+      </script>
+    </main>
+    <script>
+      window.onscroll = function() {stickToTop()};
+      var nav = document.getElementById('nav');
+      var sticky = nav.offsetTop;
+      function stickToTop() {
+        if (window.pageYOffset > sticky) {
+          nav.classList.add('sticky');
+        }
+        else {
+          nav.classList.remove('sticky');
+        }
+      }
+    </script>
+    <footer>
+      <div> <!-- footer container -->
+
+
+        <div> <!-- about us -->
+          <div id="f_logo"></div>
+
+          <div>
+            <a href="main-page.html#about-us">О нас</a>
+            <a href="coming-soon.html">Помощь</a>
+            <a href="contacts.html#feedback">Обратная связь</a>
+          </div>
+
+        </div> <!-- about us -->
+
+
+        <div id="f_co-op">
+          <h3>Сотрудничество</h3>
+
+          <div>
+            <a href="contacts.html#for-partners">Партнёрам</a>
+            <a href="contacts.html#for-suppliers">Поставщикам</a>
+            <a href="contacts.html#employment">Трудоустройство</a>
+          </div>
+
+        </div> <!-- #f_co-op -->
+
+
+        <div id="f_docs">
+          <h3>Документация</h3>
+
+          <div>
+            <a href="coming-soon.html">Аллергены и информация о питании</a>
+            <a href="coming-soon.html">Пользовательское соглашение</a>
+            <a href="privacy-policy.html">Политика конфиденциальности</a>
+            <a href="coming-soon.html">Публичная оферта</a>
+          </div>
+
+        </div> <!-- #f_docs -->
+
+
+        <div id="f_apps">
+          <h3>Наши приложения</h3>
+
+          <div class="inline">
+            <a href="coming-soon.html" title="Скачать приложение для iOS">
+              <img src="graphics/logos/app-store-badge.svg" alt="App Store">
+            </a>
+            <a href="coming-soon.html" title="Скачать приложение для Android">
+              <img src="graphics/logos/google-play-badge.png" alt="Google Play">
+            </a>
+          </div>
+
+        </div> <!-- #f_apps -->
+
+
+        <div id="f_contact">
+          <a class="link link_tel" href="tel:7773" title="Позвоните нам!">7773</a>
+
+          <div class="inline">
+            <a href="https://vk.com/vasilki.restoran" title="ВКонтакте">
+              <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="graphics/icons/sprite.svg#vk"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/vasilki.by" title="Facebook">
+              <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="graphics/icons/sprite.svg#fb"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/restoran.vasilki/" title="Instagram">
+              <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="graphics/icons/sprite.svg#ig"/>
+              </svg>
+            </a>
+          </div>
+
+        </div> <!-- #f_contact -->
+
+
+        <div id="f_friends">
+          <h3>Наши друзья</h3>
+
+          <div class="inline">
+            <a href="https://www.pizzatempo.by/" title="Пицца Темпо">
+              <img src="graphics/logos/pizza-tempo-logo.png" alt="Пицца Темпо">
+            </a>
+          </div>
+
+        </div> <!-- #f_friends -->
+
+
+        <div id="f_payment">
+          <h3>Принимаем к оплате</h3>
+
+          <div class="inline">
+            <svg viewbox="0 0 4745 2000.17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#visa"/>
+            </svg>
+            <svg viewbox="0 0 3174 1999.94" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#mc"/>
+            </svg>
+            <svg viewbox="0 0 8094 1999.89" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href="graphics/icons/sprite.svg#bk"/>
+            </svg>
+          </div>
+
+        </div> <!-- #f_payment -->
+
+
+        <div id="f_copy">
+          Разработка сайта: Стёпин С. О.<br>
+          Интернет-магазин зарегистрирован в Торговом реестре Республики Беларусь 6 февраля 2019 г. Регистрационный номер: 439943<br>
+          &copy; ООО &laquo;НОВИТА&raquo;, 2022
+        </div> <!-- #f_copy -->
+
+
+      </div> <!-- footer container -->
+    </footer>
+  </body>
+</html>
